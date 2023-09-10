@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	
+  <bean id="myPen" class="SpringCoreBeanFactory.Pen"></bean>  
+  <bean id="myBike" class="springcoresetterinjection.Bike">
+<!--   <property name="id" value="1"></property>
+  <property name="name" value="Pulsar"></property>
+  <property name="price" value="100000"></property> -->
+  <constructor-arg name="id" value="1"></constructor-arg>
+   <constructor-arg name="name" value="ford"></constructor-arg>
+    <constructor-arg name="price" value="20000002"></constructor-arg>
+    </bean>
+<bean id="myBike2" class="springcoresetterinjection.Bike2">
+<property name="cc" value="1000"></property>
+<property name="name" value="Kawasaki"></property>
+<property name="price" value="1000000"></property>
+</bean>
+
+
+
+
+<bean id="myCar" scope="prototype" class="SpringCoreDependancyInjection.Car">
+<property name="id" value="1"></property>
+<property name="brand" value="chevrolet"></property>
+<property name="price" value="2000000"></property>
+<property name="e" ref="myEngine"></property>
+</bean>
+
+
+<bean id="myEngine" scope="prototype" class="SpringCoreDependancyInjection.Engine">
+<property name="id" value="1"></property>
+<property name="cc" value="1500"></property>
+</bean>
+
+
+
+</beans>
